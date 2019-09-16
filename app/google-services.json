@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "139550640153",
+    "firebase_url": "https://weather-chart-df6f5.firebaseio.com",
+    "project_id": "weather-chart-df6f5",
+    "storage_bucket": "weather-chart-df6f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139550640153:android:2e1cc616b73e95b00bc288",
+        "android_client_info": {
+          "package_name": "com.nea.myweather"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139550640153-gn2i1qh5iop9qlq98i2hd6dvihna5dnb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqEkJbzyHpHqQYrVKZxLooXWJOTvNq2Uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139550640153-gn2i1qh5iop9qlq98i2hd6dvihna5dnb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
