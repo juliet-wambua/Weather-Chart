@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.nea.myweather.R;
 import com.nea.myweather.constants.Constants;
 
@@ -20,6 +22,9 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+
+    private DatabaseReference mSearchedLocationReference;
+
     @BindView(R.id.getWeatherButton)
     Button mGetWeatherButton;
     @BindView(R.id.locationEditText)
@@ -29,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+            mSearchedLocationReference = FirebaseDatabase
+                    .getInstance()
+                    .getReference()
+                    .child(Constants.FIREBASE_CHILD_SEARCHED_LOCATION);
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_main );
         ButterKnife.bind ( this );
@@ -54,6 +63,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             private void addToSharedPreferences(String location) {
                 mEditor.putString ( Constants.PREFERENCES_LOCATION_KEY, location ).apply ();
             }
+            public void saveLocationToFirebase(String location) {
+                mSearchedLocationReference.push().setValue(location);
+            }
+
         } );
 
 
