@@ -1,6 +1,7 @@
 package com.nea.myweather.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.nea.myweather.R;
+import com.nea.myweather.adapters.WeatherAdapter;
 import com.nea.myweather.models.Weather;
 import com.nea.myweather.service.WeatherService;
 
@@ -24,8 +26,7 @@ import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
     public static final String TAG = WeatherActivity.class.getSimpleCondition();
-    @BindView(R.id.locationTextView) TextView mLocationTextView;
-    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
 
     public ArrayList<Weather> mWeathers = new ArrayList<> ();
 
@@ -38,8 +39,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-        mLocationTextView.setText("Current Weather at: " + location);
-        getWeathers(location;);
+        getWeathers(location);
     }
 
     private void getWeathers(String location) {
@@ -58,18 +58,15 @@ public class WeatherActivity extends AppCompatActivity {
 
                     @Override
                     public void run() {
-                        String[] weatherCondition = new String[mWeathers.size ()];
-                        for (int i = 0; i < weatherCondition.length; i++) {
-                            weatherCondition[i] = mWeathers.get(i).getCondition();
-                            mListView.setAdapter(adapter);
-
-                        }                    }
+                        mAdapter = new WeatherAdapter (getApplicationContext(), weathers);
+                        mRecyclerView.setAdapter(mAdapter);
+                        RecyclerView.LayoutManager layoutManager =
+                                new LinearLayoutManager (WeatherActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
+                    }
                 });
             }
-
         });
     }
 }
-
-
-
