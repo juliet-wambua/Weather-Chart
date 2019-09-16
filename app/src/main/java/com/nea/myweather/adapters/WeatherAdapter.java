@@ -29,7 +29,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
     @Override
     public WeatherAdapter.WeatherViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_list_activity, parent, false);
         WeatherViewHolder viewHolder = new WeatherViewHolder(view);
         return viewHolder;
     }
@@ -44,21 +44,21 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
         return mWeather.size();
     }
 
-    public class RestaurantViewHolder extends RecyclerView.ViewHolder {
+    public class WeatherViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.weatherImageView) ImageView mRestaurantImageView;
         @BindView(R.id.weatherNameTextView) TextView mNameTextView;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
         @BindView(R.id.ratingTextView) TextView mRatingTextView;
         private Context mContext;
 
-        public RestaurantViewHolder(View itemView) {
+        public WeatherViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
         }
 
-        public void bindRestaurant(Weather weather) {
-            mNameTextView.setText(weather.getWeatherDetails());
+        public void bindWeather(Weather weather) {
+            mNameTextView.setText(weather.getWeather());
         }
     }
 }

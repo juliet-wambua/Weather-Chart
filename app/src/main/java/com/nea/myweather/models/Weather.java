@@ -63,4 +63,7 @@ public class Weather {
         this.current = current;
     }
 
+    public int getWeather() {
+        return Integer.parseInt ( " " );
+    }
 }

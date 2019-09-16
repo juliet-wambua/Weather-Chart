@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import okhttp3.Callback;
 import okhttp3.Response;
 
 public class WeatherService {
@@ -37,5 +38,6 @@ public class WeatherService {
     }
 
 
-
+    public void find(String location, Callback callback) {
+    }
 }

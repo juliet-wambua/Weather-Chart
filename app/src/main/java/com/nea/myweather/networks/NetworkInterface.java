@@ -1,9 +1,10 @@
 package com.nea.myweather.networks;
 
 
+import android.database.Observable;
+
 import com.nea.myweather.models.Location;
 
-import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 

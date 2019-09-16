@@ -20,8 +20,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.Editor mEditor;
+//    private SharedPreferences mSharedPreferences;
+//    private SharedPreferences.Editor mEditor;
 
     private DatabaseReference mSearchedLocationReference;
 
@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.activity_main );
         ButterKnife.bind ( this );
-
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences ( this );
-        mEditor = mSharedPreferences.edit ();
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences ( this );
-        mEditor = mSharedPreferences.edit ();
+//
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences ( this );
+//        mEditor = mSharedPreferences.edit ();
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences ( this );
+//        mEditor = mSharedPreferences.edit ();
 
         mGetWeatherButton.setOnClickListener ( new View.OnClickListener () {
 
@@ -61,13 +61,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             private void addToSharedPreferences(String location) {
-                mEditor.putString ( Constants.PREFERENCES_LOCATION_KEY, location ).apply ();
+//                mEditor.putString ( Constants.PREFERENCES_LOCATION_KEY, location ).apply ();
             }
-            public void saveLocationToFirebase(String location) {
-                mSearchedLocationReference.push().setValue(location);
-            }
+//    private void addToSharedPreferences(String location) {
+//        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
+//    }
 
-        } );
+
+
+    } );
 
 
     }

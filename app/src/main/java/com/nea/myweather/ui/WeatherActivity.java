@@ -25,7 +25,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
-    public static final String TAG = WeatherActivity.class.getSimpleCondition();
+    public static final String TAG = WeatherActivity.class.getSimpleName ();
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
 
     public ArrayList<Weather> mWeathers = new ArrayList<> ();
@@ -44,7 +44,9 @@ public class WeatherActivity extends AppCompatActivity {
 
     private void getWeathers(String location) {
         final WeatherService weatherService = new WeatherService();
-        weatherService.findWeathers(location, new Callback () {
+        weatherService.find(location, new Callback () {
+
+            private ArrayList<Weather> weathers;
 
             @Override
             public void onFailure(Call call, IOException e) {
@@ -58,7 +60,7 @@ public class WeatherActivity extends AppCompatActivity {
 
                     @Override
                     public void run() {
-                        mAdapter = new WeatherAdapter (getApplicationContext(), weathers);
+                        WeatherAdapter mAdapter = new WeatherAdapter ( getApplicationContext (), weathers );
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager =
                                 new LinearLayoutManager (WeatherActivity.this);
