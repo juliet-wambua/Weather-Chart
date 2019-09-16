@@ -37,7 +37,7 @@ public class WeatherListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
 
-        getWeathers(location);
+        getClimates(location);
 
 
 //        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -48,6 +48,6 @@ public class WeatherListActivity extends AppCompatActivity {
 //        }
     }
 
-    private void getWeathers(String location) {
+    private void getClimates(String location) {
     }
 }

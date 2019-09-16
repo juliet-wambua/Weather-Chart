@@ -44,7 +44,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     private void getWeathers(String location) {
         final WeatherService weatherService = new WeatherService();
-        weatherService.find(location, new Callback () {
+        weatherService.findWeatherDetails(location, new Callback () {
 
             private ArrayList<Weather> weathers;
 

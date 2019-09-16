@@ -14,7 +14,7 @@ import okhttp3.Response;
 
 public class WeatherService {
     public ArrayList<Weather> processResults(Response response){
-        ArrayList<Weather> weathers = new ArrayList<>();
+        ArrayList<Weather> climates = new ArrayList<>();
         try{
             String jsonData = response.body().string();
             JSONObject accessJSON = new JSONObject(jsonData);
@@ -26,7 +26,7 @@ public class WeatherService {
                     String windDir = weatherJSON.getString("direction");
                     double precip = weatherJSON.getDouble("precip");
                     Weather weather = new Weather(observationTime, windDir, precip);
-                    weathers.add(weather);
+                    climates.add(weather);
                 }
             }
         } catch (IOException e) {
@@ -34,10 +34,9 @@ public class WeatherService {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return weathers;
+        return climates;
     }
 
-
-    public void find(String location, Callback callback) {
+    public void findWeatherDetails(String location, Callback callback) {
     }
 }

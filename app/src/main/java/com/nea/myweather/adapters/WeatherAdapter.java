@@ -29,7 +29,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
     @Override
     public WeatherAdapter.WeatherViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_list_activity, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_list_item, parent, false);
         WeatherViewHolder viewHolder = new WeatherViewHolder(view);
         return viewHolder;
     }
