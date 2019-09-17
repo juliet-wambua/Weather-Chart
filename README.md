@@ -1,8 +1,8 @@
 # Weather-Chart
-#### {Weather-Chart}, {13th Sept 2019}
-#### By **{Juliet Wambua}**
+#### Weather-Chart, 13th Sept 2019
+### By Juliet Wambua**
+
 ## Description
-## About
 This is an App that is uded to get weather details.The App also implements firebase to login and store weather forecast data obtained from the Open Weather API for the next five days. The data is organised in daily three hour intervals summarised into a list where each item acts as link to more detailed view.
 
 
