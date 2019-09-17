@@ -1,7 +1,5 @@
 package com.nea.myweather.ui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,21 +10,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nea.myweather.R;
-import com.nea.myweather.R;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.nea.myweather.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = LoginActivity.class.getSimpleName();
-    @BindView(R.id.passwordLoginButton) Button mPasswordLoginButton;
-    @BindView(R.id.emailEditText) EditText mEmailEditText;
+    @BindView(R.id.passwordLoginButton)
+    Button mPasswordLoginButton;
+    @BindView(R.id.emailEditText)
+    EditText mEmailEditText;
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
-    @BindView(R.id.registerTextView) TextView mRegisterTextView;
+    @BindView(R.id.registerTextView)
+    TextView mRegisterTextView;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthProgressDialog;
@@ -78,7 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         mAuthProgressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult> () {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         mAuthProgressDialog.dismiss();

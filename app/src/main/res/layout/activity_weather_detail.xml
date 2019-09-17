@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.WeatherDetailActivity">
 
-    <android.support.v4.view.ViewPager
+    <androidx.core.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/viewPager"
         android:background="@drawable/night">
 
-        <android.support.v4.view.PagerTabStrip
+        <androidx.viewpager.widget.PagerStriper
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pageHeader"
@@ -20,7 +20,7 @@
             android:paddingTop="4dp"
             android:paddingBottom="4dp">
 
-        </android.support.v4.view.PagerTabStrip>
-    </android.support.v4.view.ViewPager>
+        </androidx.viewpager.widget.PagerStriper>
+    </androidx.core.view.ViewPager>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.ConstraintLayout>

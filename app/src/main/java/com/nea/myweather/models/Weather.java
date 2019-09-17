@@ -3,67 +3,80 @@ package com.nea.myweather.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.nea.myweather.constants.Constants;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Weather {
 
-    @SerializedName("request")
+    @SerializedName("id")
     @Expose
-    private Request request;
-    @SerializedName("location")
+    Long id;
+    @SerializedName("main")
     @Expose
-    private Location location;
-    @SerializedName("current")
+    String main;
+    @SerializedName("description")
     @Expose
-    private Current current;
+    String description;
+    @SerializedName("icon")
+    @Expose
+    String icon;
 
     /**
      * No args constructor for use in serialization
-     *
-     * @param observationTime
-     * @param windDir
-     * @param precip
+     * 
      */
-    public Weather(String observationTime, String windDir, double precip) {
+    public Weather() {
     }
 
     /**
      * 
-     * @param location
-     * @param request
-     * @param current
+     * @param id
+     * @param icon
+     * @param description
+     * @param main
      */
-    public Weather(Request request, Location location, Current current) {
+    public Weather(Long id, String main, String description, String icon) {
         super();
-        this.request = request;
-        this.location = location;
-        this.current = current;
+        this.id = id;
+        this.main = main;
+        this.description = description;
+        this.icon = icon;
     }
 
-    public Request getRequest() {
-        return request;
+    public Long getId() {
+        return id;
     }
 
-    public void setRequest(Request request) {
-        this.request = request;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Location getLocation() {
-        return location;
+    public String getMain() {
+        return main;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setMain(String main) {
+        this.main = main;
     }
 
-    public Current getCurrent() {
-        return current;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCurrent(Current current) {
-        this.current = current;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getWeather() {
-        return Integer.parseInt ( " " );
+    public String getIcon() {
+        String iconId = icon;
+        String iconUrl = Constants.WEATHER_ICON_BASEURL + iconId + Constants.ICON_EXTENSION;
+        return iconUrl;
     }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
 }
