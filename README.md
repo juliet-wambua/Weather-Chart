@@ -1,5 +1,5 @@
 # Weather-Chart
-#### Weather-Chart, 13th Sept 2019
+#### MyWeather App
 ### By Juliet Wambua
 
 ## Description
